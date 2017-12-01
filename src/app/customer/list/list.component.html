@@ -1,0 +1,110 @@
+<div class="container">
+	  <div 
+	    class="alert alert-info">
+      <a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a>
+	    Connected as  <b>{{customer.username}}</b> | role :<b> Customer </b>.<br>
+	  </div>
+      <div *ngIf="errorFlag"
+        class="alert alert-danger">
+        {{errorMsg}}
+      </div>
+      <div *ngIf="messageFlag"
+        class="alert alert-success">
+        {{message}}
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div *ngIf="property" class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Property's Info</h3>
+            </div>
+            <div class="panel-body" style="color:black">
+              ID : <b>{{property._id}}</b> <br>
+              Type : <b>{{property.type}}</b> <br>
+              Description : <b>{{property.description}}</b><br>
+              Size : <b>{{property.size}} m²</b><br>
+              Price : <b>{{property.price}}$/month</b><br>
+              Location : <button class="btn btn-success" *ngIf="!showLocationFlag"  (click)="showLocationFlag=true" >Show Location</button>
+              <button class="btn btn-primary" *ngIf="showLocationFlag" (click)="showLocationFlag=false" >Hide Location</button><br>
+              <agm-map *ngIf="showLocationFlag" [zoom]="16"  [latitude]="property.latitude" [longitude]="property.longitude">
+                <agm-marker [latitude]="property.latitude" [longitude]="property.longitude"></agm-marker>
+              </agm-map>
+              Available : <b>{{property.available}}</b><br>
+              Owner : <b>{{property.owner.username}}</b><br>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="rating-block">
+                  <h4>Average user rating</h4>
+                  <h2 class="bold padding-bottom-7">{{property.avg}}<small>/ 5</small></h2>
+                  <button *ngFor="let i of Arr(Math.round(property.avg)).fill(1)"  type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <hr/>
+                  <div class="review-block">
+                    <div *ngFor="let review of property.reviews" class="row">
+                      <div class="col-sm-3">
+                        <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                        <div class="review-block-name">{{review.customer.username}}</div>
+                        <div class="review-block-date">{{review.dateCreated| date:"MM/dd/yyyy 'at' h:mma"}}</div>
+                      </div>
+                      <div class="col-sm-9">
+                        <div class="review-block-rate">
+                          <button *ngFor="let i of Arr(review.rate).fill(1)" type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                          </button>
+                        </div>
+                        <div class="review-block-description">{{review.text}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="margin-top:40px;">
+                  <div class="well well-sm">
+                        <div class="row" id="post-review-box" style="display:block;">
+                            <div class="col-md-12">
+                                <form accept-charset="UTF-8" (submit)="addReview(property._id)">
+                                    <textarea [(ngModel)]="review" class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea>
+                                    <div class="text-right">
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="5"> 5 
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="4"> 4 
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="3"> 3 
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="2"> 2 
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="1"> 1 
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="0"> 0 
+                                        <button class="btn btn-success btn-lg" type="submit">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div> 
+                  </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <table class="table table-bordered">
+          <tr>
+            <th>#</th>
+            <th>type</th>
+            <th>Owner</th>
+            <th>Available</th>
+            <th>actions</th>
+          </tr>
+          <tr *ngFor="let property of properties">
+            <td>{{property._id}}</td>
+            <td>{{property.type}}</td>
+            <td><a [routerLink]="['../user',property.owner._id]" >{{property.owner.username}}</a></td>
+            <td>{{property.available}}</td>
+            <td><button (click)="details(property)" [disabled]="!property.valid" class="btn btn-primary" ><i class="glyphicon glyphicon-info-sign" ></i></button> | <button *ngIf="property.valid" (click)="rent(property)" class="btn btn-success" [disabled]="!property.available" >Rent</button></td>
+          </tr>
+      </table>
+        </div>
+      </div>
+
+</div> <!-- /container -->

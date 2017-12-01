@@ -1,0 +1,33 @@
+<div class="container">
+	  <div 
+	    class="alert alert-info">
+      <a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a>
+	    Connected as  <b>{{admin.username}}</b> | role :<b> Admin </b>.<br>
+	  </div>
+      <div *ngIf="errorFlag"
+        class="alert alert-danger">
+        {{errorMsg}}
+      </div>
+      <div *ngIf="messageFlag"
+        class="alert alert-success">
+        {{message}}
+      </div>
+      <table class="table table-bordered">
+          <tr>
+            <th>#</th>
+            <th>first name</th>
+            <th>last name</th>
+            <th>registered as</th>
+            <th>actions</th>
+          </tr>
+          <tr *ngFor="let user of users">
+            <td>{{user._id}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.role}}</td>
+            <td><button (click)="details(user._id)" class="btn btn-primary" ><i class="glyphicon glyphicon-info-sign" ></i></button> | <button (click)="activate(user)" class="btn btn-success" [disabled]="user.valid" ><i class="glyphicon glyphicon-ok" ></i></button>
+            | <button (click)="deactivate(user)" class="btn btn-danger" [disabled]="!user.valid"  ><i class="glyphicon glyphicon-remove" ></i></button></td>
+          </tr>
+      </table>
+
+</div> <!-- /container -->

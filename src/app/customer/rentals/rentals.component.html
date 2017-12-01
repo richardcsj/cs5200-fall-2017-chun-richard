@@ -1,0 +1,83 @@
+<div class="container">
+	  <div 
+	    class="alert alert-info">
+      <a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a>
+	    Connected as  <b>{{customer.username}}</b> | role :<b> Customer </b>.<br>
+	  </div>
+      <div *ngIf="errorFlag"
+        class="alert alert-danger">
+        {{errorMsg}}
+      </div>
+      <div *ngIf="messageFlag"
+        class="alert alert-success">
+        {{message}}
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div *ngIf="property" class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Property's Info</h3>
+            </div>
+            <div class="panel-body" style="color:black">
+              ID : <b>{{property._id}}</b> <br>
+              Type : <b>{{property.type}}</b> <br>
+              Description : <b>{{property.description}}</b><br>
+              Size : <b>{{property.size}} m²</b><br>
+              Price : <b>{{property.price}}$/month</b><br>
+              Location : <button class="btn btn-success" *ngIf="!showLocationFlag"  (click)="showLocationFlag=true" >Show Location</button>
+			    <button class="btn btn-primary" *ngIf="showLocationFlag" (click)="showLocationFlag=false" >Hide Location</button><br>
+			    <agm-map *ngIf="showLocationFlag" [zoom]="16" [latitude]="property.latitude" [longitude]="property.longitude">
+			    	<agm-marker [latitude]="property.latitude" [longitude]="property.longitude"></agm-marker>
+				</agm-map>
+              Available : <b>{{property.available}}</b><br>
+              Owner : <b>{{property.owner.username}}</b><br>
+              Reviews : <br>
+              <ul>
+                <li *ngFor="let review of property.reviews">
+                  {{review.text}} - ({{review.rate}} stars)
+                </li>
+              </ul>
+              <div class="row" style="margin-top:40px;">
+                  <div class="well well-sm">
+                        <div class="row" id="post-review-box" style="display:block;">
+                            <div class="col-md-12">
+                                <form accept-charset="UTF-8" (submit)="addReview(property._id)">
+                                    <textarea [(ngModel)]="review" class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea>
+                                    <div class="text-right">
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="5"> 5 
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="4"> 4 
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="3"> 3 
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="2"> 2 
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="1"> 1 
+                                        <input [(ngModel)]="rate" type="radio" name="rate" value="0"> 0 
+                                        <button class="btn btn-success btn-lg" type="submit">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div> 
+                  </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <table class="table table-bordered">
+          <tr>
+            <th>#</th>
+            <th>type</th>
+            <th>Owner</th>
+            <th>Available</th>
+            <th>actions</th>
+          </tr>
+          <tr *ngFor="let property of properties">
+            <td>{{property._id}}</td>
+            <td>{{property.type}}</td>
+            <td>{{property.owner.username}}</td>
+            <td>{{property.available}}</td>
+            <td><button (click)="details(property)" [disabled]="!property.valid" class="btn btn-primary" ><i class="glyphicon glyphicon-info-sign" ></i></button> | <button *ngIf="property.valid" (click)="cancel(property)" class="btn btn-danger" [disabled]="property.available" >Leave</button></td>
+          </tr>
+      </table>
+        </div>
+      </div>
+
+</div> <!-- /container -->

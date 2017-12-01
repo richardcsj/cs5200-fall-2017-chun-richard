@@ -1,0 +1,26 @@
+<div class="container">
+	  <div 
+	    class="alert alert-info">
+      <a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a>
+	    Connected as  <b>{{admin.username}}</b> | role :<b> Admin </b>.<br>
+	  </div>
+      <table class="table table-bordered">
+          <tr>
+            <th>#</th>
+            <th>Rate</th>
+            <th>Text</th>
+            <th>Property</th>
+            <th>Customer</th>
+            <th>actions</th>
+          </tr>
+          <tr *ngFor="let review of reviews">
+            <td>{{review._id}}</td>
+            <td>{{review.rate}} stars</td>
+            <td>{{review.text}}</td>
+            <td><a [routerLink]="['../property',review.property._id]" >{{review.property.type}}</a></td>
+            <td><a [routerLink]="['../user',review.customer._id]" >{{review.customer.username}}</a></td>
+            <td> <button (click)="remove(review._id)" class="btn btn-danger" ><i class="glyphicon glyphicon-remove" ></i></button></td>
+          </tr>
+      </table>
+
+</div> <!-- /container -->

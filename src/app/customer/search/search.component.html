@@ -1,0 +1,28 @@
+<div class="container">
+	<div 
+	    class="alert alert-info">
+      <a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a>
+	    Connected as  <b>{{customer.username}}</b> | role :<b> Customer </b>.<br>
+	  </div>
+	<div class="row">
+		<div class="col-sm-12"><h1>Search For Property By : </h1></div>
+	</div>
+	<div class="row">
+	  <div class="col-sm-4">
+	  	<label for="type" >Type</label>
+	  </div>
+	  <div class="col-sm-8">
+	  	<div class="input-group">
+	      <select class="form-control" name="type" [(ngModel)]="type" id="type">
+	      	<option>appartment</option>
+	      	<option>garage</option>
+	      	<option>house</option>
+	      	<option>offices</option>
+	      </select>
+	      <span class="input-group-btn">
+	        <button class="btn btn-primary" (click)="searchByType()" type="button">Search</button>
+	      </span>
+	    </div>
+	  </div>
+	</div>
+</div>

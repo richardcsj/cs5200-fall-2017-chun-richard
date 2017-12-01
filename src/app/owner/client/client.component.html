@@ -1,0 +1,44 @@
+<div class="container">
+	  <div 
+	    class="alert alert-info">
+      <a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a>
+	    Connected as  <b>{{owner.username}}</b> | role :<b> Owner </b>.<br>
+	  </div>
+	  <div class="row" >
+	  	<div class="col-xs-3">
+	  		<div *ngIf="client" class="panel panel-primary">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">User's Contact Info</h3>
+			  </div>
+	  		<div class="panel-body" style="color:black">
+			    First name : <b>{{client.firstName}}</b><br>
+			    Last name : <b>{{client.lastName}}</b><br>
+			    Email : <b>{{client.email}}</b><br>
+			    Phone : <b>{{client.phone}}</b><br>
+			    <a class="btn btn-primary" href="mailto:{{client.email}}"><i class="glyphicon glyphicon-envelope"></i></a> | <a class="btn btn-warning" href="tel:{{client.phone}}"><i class="glyphicon glyphicon-earphone"></i></a>
+			  </div>
+			</div>
+	  	</div>
+	  	<div class="col-xs-9">
+		  	<table class="table table-bordered">
+	          <tr>
+	            <th>#</th>
+	            <th>first name</th>
+	            <th>last name</th>
+	            <th>Property</th>
+	            <th>Contact</th>
+	          </tr>
+	          <tr *ngFor="let client of clients">
+	            <td>{{client._id}}</td>
+	            <td>{{client.firstName}}</td>
+	            <td>{{client.lastName}}</td>
+	            <td><a [routerLink]="['../property',client.property._id]" >{{client.property.type}}</a></td>
+	            <td><button (click)="contact(client)" class="btn btn-primary" >Contact</button></td>
+	          </tr>
+	      </table>
+
+	  	</div>
+	  </div>
+      
+
+</div> <!-- /container -->

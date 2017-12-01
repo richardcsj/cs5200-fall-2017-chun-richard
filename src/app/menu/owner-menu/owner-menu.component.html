@@ -1,0 +1,35 @@
+<div class="container">
+	  <div  class="alert alert-info">
+	    Connected as  <b>{{user.username}}</b> | role :<b> Owner </b>.
+	  </div>
+      <div class="row">
+          <div class="col-xs-4">
+            <a [routerLink]="['/owner/client']" class="thumbnail">
+              <span class="btn btn-lg btn-primary glyphicon glyphicon-user" ></span>
+              <div class="caption">
+                <h3>My Clients</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-xs-4">
+            <a [routerLink]="['/owner/property']" class="thumbnail">
+              <span class="btn btn-lg btn-primary glyphicon glyphicon-home" ></span>
+              <div class="caption">
+                <h3>My properties</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-xs-4">
+            <a [routerLink]="['/owner/review']" class="thumbnail">
+              <span class="btn btn-lg btn-primary glyphicon glyphicon-comment" ></span>
+              <div class="caption">
+                <h3>My reviews</h3>
+              </div>
+            </a>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12"><a class="btn btn-info" [routerLink]="['/profile']" >Back to profile</a></div>
+      </div>
+
+</div> <!-- /container -->

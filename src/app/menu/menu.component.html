@@ -1,0 +1,11 @@
+<div [ngSwitch]="user.role">
+	<div *ngSwitchCase="'admin'">
+		<app-admin-menu></app-admin-menu>
+	</div>
+	<div *ngSwitchCase="'customer'">
+		<app-customer-menu></app-customer-menu>
+	</div>
+	<div *ngSwitchCase="'owner'">
+		<app-owner-menu></app-owner-menu>
+	</div>
+</div>

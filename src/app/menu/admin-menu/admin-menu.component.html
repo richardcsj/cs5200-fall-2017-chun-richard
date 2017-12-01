@@ -1,0 +1,35 @@
+<div class="container">
+	  <div  class="alert alert-info">
+	    Connected as  <b>{{user.username}}</b> | role :<b> Admin </b>.
+	  </div>
+      <div class="row">
+          <div class="col-xs-4">
+            <a [routerLink]="['/admin/user']" class="thumbnail">
+              <span class="btn btn-lg btn-primary glyphicon glyphicon-user" ></span>
+              <div class="caption">
+                <h3>Users Management</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-xs-4">
+            <a [routerLink]="['/admin/property']" class="thumbnail">
+              <span class="btn btn-lg btn-primary glyphicon glyphicon-home" ></span>
+              <div class="caption">
+                <h3>Properties Management</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-xs-4">
+            <a [routerLink]="['/admin/review']" class="thumbnail">
+              <span class="btn btn-lg btn-primary glyphicon glyphicon-comment" ></span>
+              <div class="caption">
+                <h3>Reviews Management</h3>
+              </div>
+            </a>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12"><a class="btn btn-info" [routerLink]="['/profile']" >Back to profile</a></div>
+      </div>
+
+</div> <!-- /container -->

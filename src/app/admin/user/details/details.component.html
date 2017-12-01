@@ -1,0 +1,31 @@
+<div class="container">
+		<div *ngIf="messageFlag"
+        class="alert alert-success">
+        {{message}}
+      </div>
+	  <div 
+	    class="alert alert-info">
+	    <a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a>
+	    Connected as  <b>{{admin.username}}</b> | role :<b> Admin </b>.<br>
+	  </div>
+      <div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">User's Info</h3>
+	  </div>
+	  <div class="panel-body" style="color:black">
+	    Username : <b>{{user.username}}</b> <br>
+	    Password : <b>{{user.password}}</b><br>
+	    Role : <b>{{user.role}}</b><br>
+	    First name : <b>{{user.firstName}}</b><br>
+	    Last name : <b>{{user.lastName}}</b><br>
+	    Email : <b>{{user.email}}</b><br>
+	    Phone : <b>{{user.phone}}</b><br>
+	    Date of birth : <b>{{user.dob}}</b><br>
+	    Verified : <b>{{user.valid}}</b><br>
+	    Validated By : <b *ngIf="user.validatedBy">{{user.validatedBy.username}}</b><br>
+	    <button class="btn btn-primary" (click)="makeAdmin()" >Make an admin</button>
+	    <button class="btn btn-danger" (click)="deleteUser(user._id)" >Delete user</button>
+	  </div>
+	</div>
+
+</div> <!-- /container -->
