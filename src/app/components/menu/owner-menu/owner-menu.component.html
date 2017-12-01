@@ -1,35 +1,65 @@
 <div class="container">
-	  <div  class="alert alert-info">
-	    Connected as  <b>{{user.username}}</b> | role :<b> Owner </b>.
-	  </div>
-      <div class="row">
-          <div class="col-xs-4">
-            <a [routerLink]="['/owner/client']" class="thumbnail">
-              <span class="btn btn-lg btn-primary glyphicon glyphicon-user" ></span>
-              <div class="caption">
-                <h3>My Clients</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-4">
-            <a [routerLink]="['/owner/property']" class="thumbnail">
-              <span class="btn btn-lg btn-primary glyphicon glyphicon-home" ></span>
-              <div class="caption">
-                <h3>My properties</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-4">
-            <a [routerLink]="['/owner/review']" class="thumbnail">
-              <span class="btn btn-lg btn-primary glyphicon glyphicon-comment" ></span>
-              <div class="caption">
-                <h3>My reviews</h3>
-              </div>
-            </a>
-          </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12"><a class="btn btn-info" [routerLink]="['/profile']" >Back to profile</a></div>
-      </div>
+  <i class="fa fa-user"></i>  <b>{{user.username}}</b> | role :<b> Owner </b>.
+  <div class="row">
+    <div class="col-md-12">
+            <div class="heading">
+                <h2>Owner menu</h2>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <div class="team-member" >
+                <div class="image">
+                    <a [routerLink]="['/owner/client']">
+                        <img src="assets/img/users.jpg" alt="" class="img-responsive img-circle">
+                    </a>
+                </div>
+                <h3><a [routerLink]="['/owner/client']" >My Clients</a></h3>
+                <p class="role">Clients Management</p>
+                <div class="text">
+                    <p>As an owner you can have you clients informations to contact them</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="team-member" >
+                <div class="image">
+                    <a [routerLink]="['/owner/property']">
+                        <img src="assets/img/properties.jpg" alt="" class="img-responsive img-circle">
+                    </a>
+                </div>
+                <h3><a [routerLink]="['/owner/property']" >My Properties</a></h3>
+                <p class="role">Properties Management</p>
+                <div class="text">
+                    <p>As an owner you can add/update/delete you properties</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="team-member" >
+                <div class="image">
+                    <a [routerLink]="['/owner/review']" >
+                        <img src="assets/img/reviews.jpg" alt="" class="img-responsive img-circle">
+                    </a>
+                </div>
+                <h3><a [routerLink]="['/owner/review']"  >My Reviews</a></h3>
+                <p class="role">Reviews Management</p>
+                <div class="text">
+                    <p>As an owner you can display all the reviews created about your properties</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
 
-</div> <!-- /container -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="see-more">
+                <a [routerLink]="['/profile']" class="btn btn-template-main">Back to profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+                <!-- /.container -->

@@ -1,35 +1,65 @@
 <div class="container">
-	  <div  class="alert alert-info">
-	    Connected as  <b>{{user.username}}</b> | role :<b> Customer </b>.
-	  </div>
-      <div class="row">
-          <div class="col-xs-4">
-            <a [routerLink]="['/customer/search']" class="thumbnail">
-              <span class="btn btn-lg btn-primary glyphicon glyphicon-search" ></span>
-              <div class="caption">
-                <h3>Search for property</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-4">
-            <a [routerLink]="['/customer/list']" class="thumbnail">
-              <span class="btn btn-lg btn-primary glyphicon glyphicon-list" ></span>
-              <div class="caption">
-                <h3>List properties</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-4">
-            <a [routerLink]="['/customer/rentals']" class="thumbnail">
-              <span class="btn btn-lg btn-primary glyphicon glyphicon-home" ></span>
-              <div class="caption">
-                <h3>My rentals</h3>
-              </div>
-            </a>
-          </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12"><a class="btn btn-info" [routerLink]="['/profile']" >Back to profile</a></div>
-      </div>
+  <i class="fa fa-user"></i> <b>{{user.username}}</b> | role :<b> Customer </b>.
+  <div class="row">
+    <div class="col-md-12">
+            <div class="heading">
+                <h2>Customer menu</h2>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <div class="team-member" >
+                <div class="image">
+                    <a [routerLink]="['/customer/search']" >
+                        <img src="assets/img/search.jpg" alt="" class="img-responsive img-circle">
+                    </a>
+                </div>
+                <h3><a [routerLink]="['/customer/search']"  >Search</a></h3>
+                <p class="role">Search for property</p>
+                <div class="text">
+                    <p>As a customer you can search for properties by type</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="team-member" >
+                <div class="image">
+                    <a [routerLink]="['/customer/list']" >
+                        <img src="assets/img/list.jpg" alt="" class="img-responsive img-circle">
+                    </a>
+                </div>
+                <h3><a [routerLink]="['/customer/list']" >List</a></h3>
+                <p class="role">List of properties</p>
+                <div class="text">
+                    <p>As a customer you can list all properties</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="team-member" >
+                <div class="image">
+                    <a [routerLink]="['/customer/rentals']" >
+                        <img src="assets/img/rentals.jpg" alt="" class="img-responsive img-circle">
+                    </a>
+                </div>
+                <h3><a [routerLink]="['/customer/rentals']"  >My Rentals</a></h3>
+                <p class="role">Rentals Management</p>
+                <div class="text">
+                    <p>As a customer you can display all your rentals and cancel them if you want</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
 
-</div> <!-- /container -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="see-more">
+                <a [routerLink]="['/profile']" class="btn btn-template-main">Back to profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+                <!-- /.container -->

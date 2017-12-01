@@ -1,35 +1,65 @@
 <div class="container">
-	  <div  class="alert alert-info">
-	    Connected as  <b>{{user.username}}</b> | role :<b> Admin </b>.
-	  </div>
-      <div class="row">
-          <div class="col-xs-4">
-            <a [routerLink]="['/admin/user']" class="thumbnail">
-              <span class="btn btn-lg btn-primary glyphicon glyphicon-user" ></span>
-              <div class="caption">
-                <h3>Users Management</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-4">
-            <a [routerLink]="['/admin/property']" class="thumbnail">
-              <span class="btn btn-lg btn-primary glyphicon glyphicon-home" ></span>
-              <div class="caption">
-                <h3>Properties Management</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-4">
-            <a [routerLink]="['/admin/review']" class="thumbnail">
-              <span class="btn btn-lg btn-primary glyphicon glyphicon-comment" ></span>
-              <div class="caption">
-                <h3>Reviews Management</h3>
-              </div>
-            </a>
-          </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12"><a class="btn btn-info" [routerLink]="['/profile']" >Back to profile</a></div>
-      </div>
+  <i class="fa fa-user"></i>  <b>{{user.username}}</b> | role :<b> Admin </b>.
+  <div class="row">
+    <div class="col-md-12">
+            <div class="heading">
+                <h2>Administration menu</h2>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <div class="team-member" >
+                <div class="image">
+                    <a [routerLink]="['/admin/user']">
+                        <img src="assets/img/users.jpg" alt="" class="img-responsive img-circle">
+                    </a>
+                </div>
+                <h3><a [routerLink]="['/admin/user']" >Users</a></h3>
+                <p class="role">Users Management</p>
+                <div class="text">
+                    <p>As an admin you can Validate new accounts and Delete users</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="team-member" >
+                <div class="image">
+                    <a [routerLink]="['/admin/property']">
+                        <img src="assets/img/properties.jpg" alt="" class="img-responsive img-circle">
+                    </a>
+                </div>
+                <h3><a [routerLink]="['/admin/property']" >Properties</a></h3>
+                <p class="role">Properties Management</p>
+                <div class="text">
+                    <p>As an admin you can Validate new properties and Delete invalid ones</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="team-member" >
+                <div class="image">
+                    <a [routerLink]="['/admin/review']">
+                        <img src="assets/img/reviews.jpg" alt="" class="img-responsive img-circle">
+                    </a>
+                </div>
+                <h3><a [routerLink]="['/admin/review']" >Reviews</a></h3>
+                <p class="role">Reviews Management</p>
+                <div class="text">
+                    <p>As an admin you can view and manage reviews of the properties posted in the website</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
 
-</div> <!-- /container -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="see-more">
+                <a [routerLink]="['/profile']" class="btn btn-template-main">Back to profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+                <!-- /.container -->

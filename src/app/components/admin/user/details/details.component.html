@@ -1,13 +1,11 @@
 <div class="container">
+	<a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a><br>
+  <i class="fa fa-user"></i> <b>{{admin.username}}</b> | role :<b> Admin </b>.<br>
 		<div *ngIf="messageFlag"
         class="alert alert-success">
         {{message}}
       </div>
-	  <div 
-	    class="alert alert-info">
-	    <a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a>
-	    Connected as  <b>{{admin.username}}</b> | role :<b> Admin </b>.<br>
-	  </div>
+	  
       <div class="panel panel-primary">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">User's Info</h3>

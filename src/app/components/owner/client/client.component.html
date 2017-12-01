@@ -1,9 +1,7 @@
 <div class="container">
-	  <div 
-	    class="alert alert-info">
-      <a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a>
-	    Connected as  <b>{{owner.username}}</b> | role :<b> Owner </b>.<br>
-	  </div>
+	<a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a><br>
+  <i class="fa fa-user"></i> <b>{{owner.username}}</b> | role :<b> Owner </b>.<br>
+	  
 	  <div class="row" >
 	  	<div class="col-xs-3">
 	  		<div *ngIf="client" class="panel panel-primary">
