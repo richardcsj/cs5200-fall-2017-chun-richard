@@ -28,8 +28,8 @@ export class ProfileComponent implements OnInit {
   	private router: Router,private sharedService : SharedService,private titleService: Title ) { }
 
   ngOnInit() {
-  	  this.titleService.setTitle( "Your profile : "+this.user['username'] );
       this.user = this.sharedService.user;
+      this.titleService.setTitle( "Your profile : "+this.user['username'] );
       this.userId = this.user['_id'];
       this.username = this.user['username'];
       this.email = this.user['email'];

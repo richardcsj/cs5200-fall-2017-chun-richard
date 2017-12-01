@@ -1,32 +1,48 @@
+
 <div class="container">
 	  <div *ngIf="errorFlag"
 	    class="alert alert-danger">
 	    {{errorMsg}}
 	  </div>
-      <form class="form-signin" (ngSubmit) = "register()" #f="ngForm">
-        <h2 class="form-signin-heading">Register as new user</h2>
-        <label for="username" >Username</label>
-        <input type="text" id="username" name="username" class="form-control" placeholder="Username" ngModel #username="ngModel" required autofocus>
-        <span class="help-block" *ngIf="!username.valid && username.touched">
-	      Please enter username!
-	  	</span>
-        <label for="inputPassword" >Password</label>
-        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" ngModel #password="ngModel" required>
-        <span class="help-block" *ngIf="!password.valid && username.touched">
-	      Please enter password!
-	  	</span>
-        <label for="inputPassword2" >Password confirmation</label>
-        <input type="password" id="inputPassword2" name="pwdconfirmation" class="form-control" placeholder="Password confirmation" ngModel #pwdconfirmation="ngModel" required>
-        <span class="help-block" *ngIf="!pwdconfirmation.valid && pwdconfirmation.touched">
-	      Please enter password confirmation!
-	  </span>
-        <label for="registerAs" >Register As</label>
-        <select id="registerAs" class="form-control" name="registerAs" ngModel #registerAs="ngModel" required >
-        	<option value="owner" >Owner</option>
-        	<option value="customer">Customer</option>
-        </select>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Next</button>        
-        <button class="btn btn-lg btn-primary btn-block" (click)="cancel()">Cancel</button>
-      </form>
+      <div class="row">
+                    <div class="col-md-12">
+                        <div class="box">
+                            <h2 class="text-uppercase">New account</h2>
+
+                            <p class="lead">Not our registered customer yet?</p>
+                            <p>With registration with us you will have access to our services via the menu! The whole process will not take you more than a minute!</p>
+                            <p class="text-muted">If you have any questions, please feel free to <a href="/contact">contact us</a>, our customer service center is working for you 24/7.</p>
+
+                            <hr>
+
+                            <form class="form-signin" (ngSubmit) = "register()" #f="ngForm">
+                                <h2 class="form-signin-heading">Register as new user</h2>
+                                <label for="username" >Username</label>
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Username" ngModel #username="ngModel" required autofocus>
+                                <span class="help-block" *ngIf="!username.valid && username.touched">
+                                  Please enter username!
+                                </span>
+                                <label for="inputPassword" >Password</label>
+                                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" ngModel #password="ngModel" required>
+                                <span class="help-block" *ngIf="!password.valid && username.touched">
+                                  Please enter password!
+                                </span>
+                                <label for="inputPassword2" >Password confirmation</label>
+                                <input type="password" id="inputPassword2" name="pwdconfirmation" class="form-control" placeholder="Password confirmation" ngModel #pwdconfirmation="ngModel" required>
+                                <span class="help-block" *ngIf="!pwdconfirmation.valid && pwdconfirmation.touched">
+                                  Please enter password confirmation!
+                              </span>
+                                <label for="registerAs" >Register As</label>
+                                <select id="registerAs" class="form-control" name="registerAs" ngModel #registerAs="ngModel" required >
+                                    <option value="owner" >Owner</option>
+                                    <option value="customer">Customer</option>
+                                </select>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Next</button>        
+                                <button class="btn btn-lg btn-primary btn-block" (click)="cancel()">Cancel</button>
+                              </form>
+                        </div>
+                    </div>
+    </div>
+      
 
 </div> <!-- /container -->
