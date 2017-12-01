@@ -1,12 +1,27 @@
 
+// Get the dependencies
+
 const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 const app = express();
+var cookieParser = require('cookie-parser');
+var session      = require('express-session');
+var passport = require('passport');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+var secret = process.env.SESSION_SECRET || 'MEAN';
+app.use(session({ 
+	secret:secret ,
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 
 
@@ -31,11 +46,10 @@ const port = process.env.PORT || '3100';
 
 // Create HTTP server
 const server = http.createServer(app);
-
-// For Build: Catch all other routes and return the index file -- BUILDING
-
-require("./server/routes.js")(app);
-
+//models
+var models = require("./server/models/models.server.js")(app);
+//services
+require("./server/app.js")(app,models);
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
