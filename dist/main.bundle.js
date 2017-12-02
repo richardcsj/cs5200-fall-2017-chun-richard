@@ -103,12 +103,16 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_customer_search_search_component__ = __webpack_require__("../../../../../src/app/components/customer/search/search.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_customer_list_list_component__ = __webpack_require__("../../../../../src/app/components/customer/list/list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_customer_rentals_rentals_component__ = __webpack_require__("../../../../../src/app/components/customer/rentals/rentals.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_about_about_component__ = __webpack_require__("../../../../../src/app/components/about/about.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -168,7 +172,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_28__components_owner_review_review_component__["a" /* OwnerReviewComponent */],
             __WEBPACK_IMPORTED_MODULE_29__components_customer_search_search_component__["a" /* SearchComponent */],
             __WEBPACK_IMPORTED_MODULE_30__components_customer_list_list_component__["a" /* ListComponent */],
-            __WEBPACK_IMPORTED_MODULE_31__components_customer_rentals_rentals_component__["a" /* RentalsComponent */]
+            __WEBPACK_IMPORTED_MODULE_31__components_customer_rentals_rentals_component__["a" /* RentalsComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__components_contact_contact_component__["a" /* ContactComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__components_about_about_component__["a" /* AboutComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -211,6 +217,10 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_customer_list_list_component__ = __webpack_require__("../../../../../src/app/components/customer/list/list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_customer_rentals_rentals_component__ = __webpack_require__("../../../../../src/app/components/customer/rentals/rentals.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_guard_service__ = __webpack_require__("../../../../../src/app/services/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_about_about_component__ = __webpack_require__("../../../../../src/app/components/about/about.component.ts");
+
+
 
 
 
@@ -249,11 +259,74 @@ var APP_ROUTES = [
     { path: 'customer/search', component: __WEBPACK_IMPORTED_MODULE_14__components_customer_search_search_component__["a" /* SearchComponent */] },
     { path: 'customer/list', component: __WEBPACK_IMPORTED_MODULE_15__components_customer_list_list_component__["a" /* ListComponent */] },
     { path: 'customer/type/:type', component: __WEBPACK_IMPORTED_MODULE_15__components_customer_list_list_component__["a" /* ListComponent */] },
-    { path: 'customer/rentals', component: __WEBPACK_IMPORTED_MODULE_16__components_customer_rentals_rentals_component__["a" /* RentalsComponent */] }
+    { path: 'customer/rentals', component: __WEBPACK_IMPORTED_MODULE_16__components_customer_rentals_rentals_component__["a" /* RentalsComponent */] },
+    { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_18__components_contact_contact_component__["a" /* ContactComponent */] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_19__components_about_about_component__["a" /* AboutComponent */] }
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forRoot(APP_ROUTES);
 //# sourceMappingURL=app.routing.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/about/about.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/about/about.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n\n                <section>\n                    <div class=\"row\">\n                        <div class=\"col-md-12\">\n\n                            <div class=\"heading\">\n                                <h2>About PMS</h2>\n                            </div>\n\n                            <p class=\"lead\">Property Management System is a big forum where owners of properties and custmer are gathered to exchange services in a secure way.</p>\n\n                        </div>\n                    </div>\n                </section>\n\n            </div>\n            <!-- /#contact.container -->\n\n            <section class=\"bar background-pentagon\">\n                <div class=\"container\">\n                    <div class=\"row showcase\">\n                        <div class=\"col-md-4 col-sm-12\">\n                            <div class=\"item\">\n                                <div class=\"icon\"><i class=\"fa fa-align-justify\"></i>\n                                </div>\n                                <h4><span class=\"counter\">580</span><br>\n\n\t\tProperties</h4>\n                            </div>\n                        </div>\n                        <div class=\"col-md-4 col-sm-12\">\n                            <div class=\"item\">\n                                <div class=\"icon\"><i class=\"fa fa-users\"></i>\n                                </div>\n                                <h4><span class=\"counter\">300</span><br>\n\n\t\tSatisfied Clients</h4>\n                            </div>\n                        </div>\n                        <div class=\"col-md-4 col-sm-12\">\n                            <div class=\"item\">\n                                <div class=\"icon\"><i class=\"fa fa-copy\"></i>\n                                </div>\n                                <h4><span class=\"counter\">320</span><br>\n\n\t\tVisits/day</h4>\n                            </div>\n                        </div>\n                    </div>\n                    <!-- /.row -->\n                </div>\n                <!-- /.container -->\n            </section>\n            <!-- /.bar -->\n\n            <section class=\"bar background-white\">\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-md-12\">\n                            <div class=\"heading\">\n                                <h2>Meet our team</h2>\n                            </div>\n                        </div>\n                    </div>\n                    <!-- /.row -->\n                    <div class=\"row\">\n                        <div class=\"col-md-12 col-sm-12\">\n                            <div class=\"team-member\" >\n                                <div class=\"image\">\n                                    <a href=\"team-member.html\">\n                                        <img src=\"img/person-1.jpg\" alt=\"\" class=\"img-responsive img-circle\">\n                                    </a>\n                                </div>\n                                <h3><a href=\"team-member.html\">Richard Chun</a></h3>\n                                <p class=\"role\">Founder</p>\n                                <div class=\"social\">\n                                    <a href=\"#\" class=\"external facebook\" data-animate-hover=\"pulse\"><i class=\"fa fa-facebook\"></i></a>\n                                    <a href=\"#\" class=\"external gplus\" data-animate-hover=\"pulse\"><i class=\"fa fa-google-plus\"></i></a>\n                                    <a href=\"#\" class=\"external twitter\" data-animate-hover=\"pulse\"><i class=\"fa fa-twitter\"></i></a>\n                                    <a href=\"#\" class=\"email\" data-animate-hover=\"pulse\"><i class=\"fa fa-envelope\"></i></a>\n                                </div>\n                                <div class=\"text\">\n                                    <p>Web developer</p>\n                                </div>\n                            </div>\n                            <!-- /.team-member -->\n                        </div>\n                    </div>\n                    <!-- /.row -->\n\n                </div>\n                <!-- /.container -->\n            </section>\n\n          \n\n            <section class=\"bar background-pentagon no-mb\">\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-md-12\">\n                            <div class=\"heading text-center\">\n                                <h2>Testimonials</h2>\n                            </div>\n\n                            <p class=\"lead\">We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us.</p>\n\n\n                            <!-- *** TESTIMONIALS CAROUSEL ***\n _________________________________________________________ -->\n\n                            <ul class=\"owl-carousel testimonials same-height-row\">\n                                <li class=\"item\">\n                                    <div class=\"testimonial same-height-always\">\n                                        <div class=\"text\">\n                                            <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown\n                                                belly, slightly domed and divided by arches into stiff sections.</p>\n                                        </div>\n                                        <div class=\"bottom\">\n                                            <div class=\"icon\"><i class=\"fa fa-quote-left\"></i>\n                                            </div>\n                                            <div class=\"name-picture\">\n                                                <img class=\"\" alt=\"\" src=\"img/person-1.jpg\">\n                                                <h5>John McIntyre</h5>\n                                                <p>CEO, TransTech</p>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li class=\"item\">\n                                    <div class=\"testimonial same-height-always\">\n                                        <div class=\"text\">\n                                            <p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. \"What's happened\n                                                to me? \" he thought. It wasn't a dream.</p>\n                                        </div>\n                                        <div class=\"bottom\">\n                                            <div class=\"icon\"><i class=\"fa fa-quote-left\"></i>\n                                            </div>\n                                            <div class=\"name-picture\">\n                                                <img class=\"\" alt=\"\" src=\"img/person-2.jpg\">\n                                                <h5>John McIntyre</h5>\n                                                <p>CEO, TransTech</p>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li class=\"item\">\n                                    <div class=\"testimonial same-height-always\">\n                                        <div class=\"text\">\n                                            <p>His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>\n\n                                            <p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice,\n                                                gilded frame.</p>\n                                        </div>\n                                        <div class=\"bottom\">\n                                            <div class=\"icon\"><i class=\"fa fa-quote-left\"></i>\n                                            </div>\n                                            <div class=\"name-picture\">\n                                                <img class=\"\" alt=\"\" src=\"img/person-3.png\">\n                                                <h5>John McIntyre</h5>\n                                                <p>CEO, TransTech</p>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li class=\"item\">\n                                    <div class=\"testimonial same-height-always\">\n                                        <div class=\"text\">\n                                            <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull\n                                                weather. Drops of rain could be heard hitting the pane, which made him feel quite sad.</p>\n                                        </div>\n\n                                        <div class=\"bottom\">\n                                            <div class=\"icon\"><i class=\"fa fa-quote-left\"></i>\n                                            </div>\n                                            <div class=\"name-picture\">\n                                                <img class=\"\" alt=\"\" src=\"img/person-4.jpg\">\n                                                <h5>John McIntyre</h5>\n                                                <p>CEO, TransTech</p>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li class=\"item\">\n                                    <div class=\"testimonial same-height-always\">\n                                        <div class=\"text\">\n                                            <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull\n                                                weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which\n                                                made him feel quite sad.</p>\n                                        </div>\n\n                                        <div class=\"bottom\">\n                                            <div class=\"icon\"><i class=\"fa fa-quote-left\"></i>\n                                            </div>\n                                            <div class=\"name-picture\">\n                                                <img class=\"\" alt=\"\" src=\"img/person-4.jpg\">\n                                                <h5>John McIntyre</h5>\n                                                <p>CEO, TransTech</p>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </li>\n                            </ul>\n                            <!-- /.owl-carousel -->\n\n                            <!-- *** TESTIMONIALS CAROUSEL END *** -->\n                        </div>\n\n                    </div>\n                </div>\n            </section>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/about/about.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AboutComponent = (function () {
+    function AboutComponent() {
+    }
+    AboutComponent.prototype.ngOnInit = function () {
+    };
+    return AboutComponent;
+}());
+AboutComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-about',
+        template: __webpack_require__("../../../../../src/app/components/about/about.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/about/about.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], AboutComponent);
+
+//# sourceMappingURL=about.component.js.map
 
 /***/ }),
 
@@ -833,6 +906,67 @@ UserComponent = __decorate([
 
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=user.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/contact/contact.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/contact/contact.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\" id=\"contact\">\n\n                <section>\n\n                    <div class=\"row\">\n                        <div class=\"col-md-12\">\n                            <section>\n                                <div class=\"heading\">\n                                    <h2>We are here to help you</h2>\n                                </div>\n\n                                <p class=\"lead\">Are you curious about something? Do you have some kind of problem with our service? </p>\n                                <p>Please feel free to contact us, our customer service center is working for you 24/7.</p>\n                            </section>\n                        </div>\n                    </div>\n\n                </section>\n\n                <section>\n\n                    <div class=\"row\">\n                        <div class=\"col-md-4\">\n                            <div class=\"box-simple\">\n                                <div class=\"icon\">\n                                    <i class=\"fa fa-map-marker\"></i>\n                                </div>\n                                <h3>Address</h3>\n                                <p>13/25 some St\n                                    \n                                    <br>Boston, <strong>USA</strong>\n                                </p>\n                            </div>\n                            <!-- /.box-simple -->\n                        </div>\n\n\n                        <div class=\"col-md-4\">\n\n                            <div class=\"box-simple\">\n                                <div class=\"icon\">\n                                    <i class=\"fa fa-phone\"></i>\n                                </div>\n                                <h3>Call center</h3>\n                     \n                                <p><strong>+1 555 444 333</strong>\n                                </p>\n                            </div>\n                            <!-- /.box-simple -->\n\n                        </div>\n\n                        <div class=\"col-md-4\">\n\n                            <div class=\"box-simple\">\n                                <div class=\"icon\">\n                                    <i class=\"fa fa-envelope\"></i>\n                                </div>\n                                <h3>Electronic support</h3>\n                                <p class=\"text-muted\">Please feel free to write an email to us </p>\n                                <ul class=\"list-style-none\">\n                                    <li><strong><a href=\"mailto:\">contact@pms.com</a></strong>\n                                    </li>\n                           \n                                </ul>\n                            </div>\n                            <!-- /.box-simple -->\n                        </div>\n                    </div>\n\n                </section>\n\n                <section>\n\n                    <div class=\"row text-center\">\n\n                        <div class=\"col-md-12\">\n                            <div class=\"heading\">\n                                <h2>Contact form</h2>\n                            </div>\n                        </div>\n\n                        <div class=\"col-md-8 col-md-offset-2\">\n                            <form>\n                                <div class=\"row\">\n                                    <div class=\"col-sm-6\">\n                                        <div class=\"form-group\">\n                                            <label for=\"firstname\">Firstname</label>\n                                            <input type=\"text\" class=\"form-control\" id=\"firstname\">\n                                        </div>\n                                    </div>\n                                    <div class=\"col-sm-6\">\n                                        <div class=\"form-group\">\n                                            <label for=\"lastname\">Lastname</label>\n                                            <input type=\"text\" class=\"form-control\" id=\"lastname\">\n                                        </div>\n                                    </div>\n                                    <div class=\"col-sm-6\">\n                                        <div class=\"form-group\">\n                                            <label for=\"email\">Email</label>\n                                            <input type=\"text\" class=\"form-control\" id=\"email\">\n                                        </div>\n                                    </div>\n                                    <div class=\"col-sm-6\">\n                                        <div class=\"form-group\">\n                                            <label for=\"subject\">Subject</label>\n                                            <input type=\"text\" class=\"form-control\" id=\"subject\">\n                                        </div>\n                                    </div>\n                                    <div class=\"col-sm-12\">\n                                        <div class=\"form-group\">\n                                            <label for=\"message\">Message</label>\n                                            <textarea id=\"message\" class=\"form-control\"></textarea>\n                                        </div>\n                                    </div>\n\n                                    <div class=\"col-sm-12 text-center\">\n                                        <button type=\"submit\" class=\"btn btn-template-main\"><i class=\"fa fa-envelope-o\"></i> Send message</button>\n\n                                    </div>\n                                </div>\n                                <!-- /.row -->\n                            </form>\n\n\n\n                        </div>\n                    </div>\n                    <!-- /.row -->\n\n                </section>\n\n\n            </div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/contact/contact.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ContactComponent = (function () {
+    function ContactComponent() {
+    }
+    ContactComponent.prototype.ngOnInit = function () {
+    };
+    return ContactComponent;
+}());
+ContactComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-contact',
+        template: __webpack_require__("../../../../../src/app/components/contact/contact.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/contact/contact.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ContactComponent);
+
+//# sourceMappingURL=contact.component.js.map
 
 /***/ }),
 

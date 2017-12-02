@@ -17,6 +17,8 @@ import { SearchComponent } from './components/customer/search/search.component';
 import { ListComponent } from './components/customer/list/list.component';
 import { RentalsComponent } from './components/customer/rentals/rentals.component';
 import {AuthGuard} from './services/auth-guard.service';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 
@@ -40,7 +42,9 @@ const APP_ROUTES : Routes = [
   { path : 'customer/search',component:SearchComponent},
   { path : 'customer/list',component:ListComponent},
   { path : 'customer/type/:type',component:ListComponent},
-  { path : 'customer/rentals',component:RentalsComponent}
+  { path : 'customer/rentals',component:RentalsComponent},
+  { path : 'contact',component:ContactComponent},
+  { path : 'about',component:AboutComponent}
 ];
 // Export the routes as module providers
 export const Routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

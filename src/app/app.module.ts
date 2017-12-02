@@ -34,6 +34,8 @@ import { OwnerReviewComponent } from './components/owner/review/review.component
 import { SearchComponent } from './components/customer/search/search.component';
 import { ListComponent } from './components/customer/list/list.component';
 import { RentalsComponent } from './components/customer/rentals/rentals.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 
@@ -58,7 +60,9 @@ import { RentalsComponent } from './components/customer/rentals/rentals.componen
     OwnerReviewComponent,
     SearchComponent,
     ListComponent,
-    RentalsComponent
+    RentalsComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
