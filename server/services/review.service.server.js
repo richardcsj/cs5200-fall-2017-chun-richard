@@ -90,7 +90,7 @@ module.exports=function(app,models){
   	var reviewId = req.params.reviewId;
     reviewModel.deleteReview(reviewId)
       .then(
-        function(res){
+        function(result){
           res.send({deleted:true});
         },
         function(error){
