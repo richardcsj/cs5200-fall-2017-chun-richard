@@ -19,6 +19,8 @@ import { RentalsComponent } from './components/customer/rentals/rentals.componen
 import {AuthGuard} from './services/auth-guard.service';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
+import { NewUserComponent } from './components/admin/user/new/new.component';
+import { EditComponent } from './components/admin/user/edit/edit.component';
 
 
 
