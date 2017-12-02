@@ -1,0 +1,39 @@
+<div class="container">
+    <a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a><br>
+  <i class="fa fa-user"></i> <b>{{admin.username}}</b> | role :<b> Admin </b>.<br>
+	<div *ngIf="errorFlag"
+	    class="alert alert-danger">
+	    {{errorMsg}}
+	  </div>
+		<div *ngIf="messageFlag"
+        class="alert alert-success">
+        {{message}}
+      </div>
+      <div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">User's Info</h3>
+	  </div>
+	  <div class="panel-body" style="color:black">
+	  	<form class="form-signin">
+        <h2 class="form-signin-heading">Profile Information 
+        	<span *ngIf="!valid" class="label label-danger">Unverified</span>
+			<span *ngIf="valid" class="label label-success">Verified</span>
+        	</h2>
+         <label for="username" >Username</label>
+        <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" placeholder="Username" required>
+        <label for="firstName" >First Name</label>
+        <input type="text" id="firstName" [(ngModel)]="firstName" name="firstName" class="form-control" placeholder="First Name" required>
+        <label for="lastName" >Last Name</label>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" class="form-control" placeholder="Last Name" required>
+        <label for="email" >Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" class="form-control" placeholder="Email" required>
+        <label for="phone" >Phone</label>
+        <input type="text" id="phone" name="phone" [(ngModel)]="phone" class="form-control" placeholder="Phone" required>
+        <label for="dob" >Date Of Birth</label>
+        <input type="string" id="dob" name="dob" [(ngModel)]="dob" class="form-control" placeholder="dd/mm/yyyy" required>
+        <button class="btn btn-lg btn-primary btn-block" (click)="update()">Save</button>
+      </form>
+	  </div>
+	</div>
+
+</div> <!-- /container -->

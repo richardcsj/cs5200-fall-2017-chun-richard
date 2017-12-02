@@ -36,6 +36,8 @@ import { ListComponent } from './components/customer/list/list.component';
 import { RentalsComponent } from './components/customer/rentals/rentals.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
+import { NewUserComponent } from './components/admin/user/new/new.component';
+import { EditComponent } from './components/admin/user/edit/edit.component';
 
 
 
@@ -62,7 +64,9 @@ import { AboutComponent } from './components/about/about.component';
     ListComponent,
     RentalsComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    NewUserComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

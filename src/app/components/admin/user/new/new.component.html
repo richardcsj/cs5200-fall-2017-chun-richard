@@ -1,0 +1,36 @@
+<div class="container">
+    <a (click)="back()" class="pull-left" > <i class="glyphicon glyphicon-chevron-left"></i> </a><br>
+  <i class="fa fa-user"></i> <b>{{admin.username}}</b> | role :<b> Admin </b>.<br>
+		<div *ngIf="messageFlag"
+        class="alert alert-success">
+        {{message}}
+      </div>
+      <div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Create new user</h3>
+	  </div>
+	  <div class="panel-body" style="color:black">
+	  <form class="form-signin" (ngSubmit) = "register()" #f="ngForm">
+        <h2 class="form-signin-heading">Register as new user</h2>
+        <label for="username" >Username</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Username" ngModel #username="ngModel" required autofocus>
+        <span class="help-block" *ngIf="!username.valid && username.touched">
+	      Please enter username!
+	  	</span>
+        <label for="inputPassword" >Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" ngModel #password="ngModel" required>
+        <span class="help-block" *ngIf="!password.valid && username.touched">
+	      Please enter password!
+	  	</span>
+        <label for="registerAs" >Register As</label>
+        <select id="registerAs" class="form-control" name="registerAs" ngModel #registerAs="ngModel" required >
+        	<option value="admin" >Admin</option>
+        	<option value="owner" >Owner</option>
+        	<option value="customer">Customer</option>
+        </select>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Next</button> 
+      </form>
+	  </div>
+	</div>
+
+</div> <!-- /container -->
