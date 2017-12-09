@@ -66,7 +66,7 @@ adminId:string;
   }
   deactivate(property:any){
   	property.valid = false;
-    property.validatedBy = {};
+    property.validatedBy = null;
   	this.propertyService.updateProperty(property._id,property)
         .subscribe(
           (res:any) => {           

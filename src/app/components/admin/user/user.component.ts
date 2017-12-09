@@ -72,7 +72,7 @@ adminId:string;
           },
           (error:any) => {
             this.errorFlag = true;
-            this.errorMsg = 'cannot validate user';
+            this.errorMsg = 'cannot deactivate user';
 
           }
         );

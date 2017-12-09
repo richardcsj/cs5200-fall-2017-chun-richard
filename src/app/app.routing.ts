@@ -21,6 +21,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { NewUserComponent } from './components/admin/user/new/new.component';
 import { EditComponent } from './components/admin/user/edit/edit.component';
+import { LogoutComponent } from './components/user/logout/logout.component';
 
 
 
@@ -30,6 +31,7 @@ const APP_ROUTES : Routes = [
   { path : 'login' , component: LoginComponent},
   { path : 'register' , component:RegisterComponent },
   { path : 'profile' , component: ProfileComponent, canActivate: [AuthGuard]},
+  { path : 'logout' , component: LogoutComponent},
   { path : 'profile/menu' , component: MenuComponent},
   { path: 'admin/user', component: UserComponent},
   { path: 'admin/property', component: PropertyComponent},
