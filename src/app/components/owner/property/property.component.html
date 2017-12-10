@@ -17,7 +17,7 @@
 			  </div>
 	  		<div class="panel-body" style="color:black;padding:30px">
 			    <form class="form-horizontal" #f="ngForm">
-				  <div class="form-group">
+				  <div style="display: none" class="form-group">
 				    <label for="propertyId" class="control-label">Id</label>
 				      <input type="text" class="form-control" id="propertyId" name="propertyId" placeholder="id" [(ngModel)]="propertyId" >
 				  </div>
@@ -50,11 +50,11 @@
 				      <div id="map"></div>
 
 				  </div>
-				  <div style="visibility: hidden;" class="form-group">
+				  <div style="display: none;" class="form-group">
 				    <label for="latitude" class="control-label">Latitude</label>
 				      <input type="number" class="form-control" id="latitude" name="latitude" placeholder="latitude" [(ngModel)]="latitude">
 				  </div>
-				  <div style="visibility: hidden;" class="form-group">
+				  <div style="display: none;" class="form-group">
 				    <label for="longitude" class="control-label">Longitude</label>
 				      <input type="number" class="form-control" id="longitude" name="longitude" placeholder="longitude" [(ngModel)]="longitude">
 				  </div>
