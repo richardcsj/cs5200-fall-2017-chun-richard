@@ -1,32 +1,40 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {UserService} from "../../../services/user.service";
+import {UserService} from "../services/user.service";
 import {Routes, RouterModule,ActivatedRoute,Router} from "@angular/router";
 import { Title }     from '@angular/platform-browser';
 
-
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-setup',
+  templateUrl: './setup.component.html',
+  styleUrls: ['./setup.component.css']
 })
-export class RegisterComponent implements OnInit {
-
-  @ViewChild('f') registerForm: NgForm;
+export class SetupComponent implements OnInit {
+@ViewChild('f') registerForm: NgForm;
   //properties
   username: string;
   password: string;
   pwdconfirmation: string;
-  registerAs:string;
+  registerAs:string="admin";
   errorFlag: boolean;
   errorMsg = 'Invalid username!';
   constructor(private userService: UserService,private route: ActivatedRoute,
-            private router: Router,private titleService: Title ) { }
+            private router: Router,private titleService: Title) { }
 
   ngOnInit() {
-    this.titleService.setTitle( "Register" );
+  	this.titleService.setTitle( "Setup" );
+  	this.userService.findAllUsers()
+  		.subscribe(
+  				(users:any)=>{
+  					for(let i=0;i<users.length;i++){
+  						if(users[i].role=="admin"){
+  							this.router.navigate(['/login']);
+  						}
+  					}
+  				}
+  			);
   }
-  register() {
+  setup() {
       //hide error msg if already there
       this.errorFlag = false;
       // fetching data from registerForm
@@ -41,7 +49,7 @@ export class RegisterComponent implements OnInit {
 
       }else{
           if(this.password == this.pwdconfirmation){
-              this.userService.register(this.username, this.password,this.registerAs,false)
+              this.userService.register(this.username, this.password,this.registerAs,true)
                  .subscribe(
                    (data: any) => {
                      this.router.navigate(['/profile']);

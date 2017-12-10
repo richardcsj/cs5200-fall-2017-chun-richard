@@ -42,12 +42,13 @@ export class UserService {
      );
   }
 
-  register(username: String, password: String,role:string) {
+  register(username: String, password: String,role:string,valid:boolean) {
    this.options.withCredentials = true;
    const user = {
      username : username,
      password : password,
-     role: role
+     role: role,
+     valid:valid
    };
 
    return this._http.post(this.baseUrl + '/api/register', user, this.options)

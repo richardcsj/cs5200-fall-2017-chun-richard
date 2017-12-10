@@ -39,6 +39,7 @@ import { AboutComponent } from './components/about/about.component';
 import { NewUserComponent } from './components/admin/user/new/new.component';
 import { EditComponent } from './components/admin/user/edit/edit.component';
 import { LogoutComponent } from './components/user/logout/logout.component';
+import { SetupComponent } from './setup/setup.component';
 
 
 
@@ -68,7 +69,8 @@ import { LogoutComponent } from './components/user/logout/logout.component';
     AboutComponent,
     NewUserComponent,
     EditComponent,
-    LogoutComponent
+    LogoutComponent,
+    SetupComponent
   ],
   imports: [
     BrowserModule,
