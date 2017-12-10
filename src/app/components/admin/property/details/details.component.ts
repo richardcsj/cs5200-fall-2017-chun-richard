@@ -5,6 +5,7 @@ import {PropertyService} from "../../../../services/property.service";
 import {SharedService} from "../../../../services/shared.service";
 import {Location} from '@angular/common';
 import { Title }     from '@angular/platform-browser';
+declare var google: any;
 
 @Component({
   selector: 'app-details',
@@ -34,6 +35,15 @@ propertyId:string;
 		  .subscribe(
 		    (property:any)=>{
 		      this.property = property;
+		      var uluru = {lat: this.property.latitude, lng: this.property.longitude};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 10,
+              center: uluru
+            });
+            var marker = new google.maps.Marker({
+              position: uluru,
+              map: map
+            });
 		    },
 		    (error:any)=>{
 		      console.log(error);

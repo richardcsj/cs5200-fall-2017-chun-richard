@@ -7,7 +7,7 @@ import {SharedService} from "../../../services/shared.service";
 import {GMapsService} from "../../../services/gmaps.service";
 import {Location} from '@angular/common';
 import { Title }     from '@angular/platform-browser';
-
+declare var google: any;
 
 @Component({
   selector: 'app-property',
@@ -159,14 +159,25 @@ export class OwnerPropertyComponent implements OnInit {
     this.gmaps.getLatLan(this.address)
       .subscribe(
           (location:any)=>{
-            this.loading = false;
-            this.showLocationFlag = true;
             this.latitude = location.lat();
             this.longitude = location.lng();
+            var uluru = {lat: this.latitude, lng: this.longitude};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 10,
+              center: uluru
+            });
+            var marker = new google.maps.Marker({
+              position: uluru,
+              map: map
+            });
+            this.loading = false;
+            this.showLocationFlag = true;
           },
           (error:any)=>{
             this.errorFlag = true;
             this.errorMsg = 'cannot find address, please try another one';
+            this.loading = false;
+            this.showLocationFlag = false;
 
           }
         )

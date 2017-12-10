@@ -12,11 +12,8 @@
 	    Description : <b>{{property.description}}</b><br>
 	    Size : <b>{{property.size}} m²</b><br>
 	    Price : <b>{{property.price}}$/month</b><br>
-	    Location : <button class="btn btn-success" *ngIf="!showLocationFlag"  (click)="showLocationFlag=true" >Show Location</button>
-	    <button class="btn btn-primary" *ngIf="showLocationFlag" (click)="showLocationFlag=false" >Hide Location</button><br>
-	    <agm-map *ngIf="showLocationFlag" [zoom]="16"  [latitude]="property.latitude" [longitude]="property.longitude">
-	    	<agm-marker [latitude]="property.latitude" [longitude]="property.longitude"></agm-marker>
-		</agm-map>
+	    Location : <br>
+	    <div id="map"></div>
 	    Available : <b>{{property.available}}</b><br>
 	    Owner : <b>{{property.owner.username}}</b><br>
 	    Customer : <b *ngIf="property.customer">{{property.customer.username}}</b><br>

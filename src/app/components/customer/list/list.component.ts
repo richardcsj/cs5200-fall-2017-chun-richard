@@ -6,6 +6,7 @@ import {ReviewService} from "../../../services/review.service";
 import {SharedService} from "../../../services/shared.service";
 import {Location} from '@angular/common';
 import { Title }     from '@angular/platform-browser';
+declare var google: any;
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -63,6 +64,7 @@ customerId:string;
   }
   details(property:any){
   	this.property = property;
+    
     this.property.avg = 0;
   	this.reviewService.findReviewsForProperty(property._id)
   		.subscribe(
@@ -78,6 +80,19 @@ customerId:string;
           this.property.avg = rate;
   			}
   		)
+      if(document.getElementById('map'))
+        this.showLocation();
+  }
+  showLocation(){
+    var uluru = {lat: this.property.latitude, lng: this.property.longitude};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
   }
   rent(property:any){
   	property.customer = this.customerId;

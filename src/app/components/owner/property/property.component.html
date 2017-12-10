@@ -15,7 +15,7 @@
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Add/Update property</h3>
 			  </div>
-	  		<div class="panel-body" style="color:black">
+	  		<div class="panel-body" style="color:black;padding:30px">
 			    <form class="form-horizontal" #f="ngForm">
 				  <div class="form-group">
 				    <label for="propertyId" class="control-label">Id</label>
@@ -25,7 +25,7 @@
 
 				    <label for="type" class="control-label">Type</label>
 				      <select class="form-control" id="type" name="type" [(ngModel)]="type">
-				      	<option value="appartment">appartment</option>
+				      	<option value="apartment">apartment</option>
 				      	<option value="garage">garage</option>
 				      	<option value="house">house</option>
 				      	<option value="offices">offices</option>
@@ -47,22 +47,20 @@
 				    <label for="address" class="control-label">Address</label>
 				      <input type="text" class="form-control" id="addres" name="address" placeholder="Address" [(ngModel)]="address">
 				      <button class="btn btn-primary" (click)="getLatLan()" >Get Location<div *ngIf="loading" class="loader"></div></button>
-				      <agm-map *ngIf="showLocationFlag" [zoom]="10"  [latitude]="latitude" [longitude]="longitude">
-				    	<agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-					</agm-map>
+				      <div id="map"></div>
 
 				  </div>
-				  <div class="form-group">
+				  <div style="visibility: hidden;" class="form-group">
 				    <label for="latitude" class="control-label">Latitude</label>
 				      <input type="number" class="form-control" id="latitude" name="latitude" placeholder="latitude" [(ngModel)]="latitude">
 				  </div>
-				  <div class="form-group">
+				  <div style="visibility: hidden;" class="form-group">
 				    <label for="longitude" class="control-label">Longitude</label>
 				      <input type="number" class="form-control" id="longitude" name="longitude" placeholder="longitude" [(ngModel)]="longitude">
 				  </div>
 				  <div class="form-group">
 				    <div>
-				      <button (click)="save()" class="btn btn-success">Add</button> <button (click)="update()" class="btn btn-info">Update</button>
+				      <button (click)="save()" style="margin-right:10px" class="btn btn-success">Add</button> <button (click)="update()" class="btn btn-info">Update</button>
 				    </div>
 				  </div>
 				</form>
